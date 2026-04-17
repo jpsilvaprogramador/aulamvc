@@ -1,0 +1,7 @@
+# Ativa o mecanismo de reescrita
+RewriteEngine On
+
+# Redireciona tudo para o Front Controller (public/index.php)
+RewriteCond %{REQUEST_URL} !^/public
+RewriteRule ^(.*)$ public/index.php?url=$1 [QSA,L]
+
