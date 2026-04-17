@@ -1,0 +1,11 @@
+{
+    "name": "joao/mvc",
+    "description": "MVC Estructure",
+    "authors": [
+        {
+            "name": "João Paulo",
+            "email": "jpsilvaprogramador@gmail.com"
+        }
+    ],
+    "require": {}
+}
