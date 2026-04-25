@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../controller/HomeController.php';
-require_once __DIR__ . '/../controller/NoticiasController.php';
 require_once __DIR__ . '/../controller/errors/HttpErrorController.php';
 
 

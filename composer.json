@@ -1,11 +1,15 @@
 {
-    "name": "joao/mvc",
-    "description": "MVC Estructure",
+    "name": "joaopaulo/mvc",
     "authors": [
         {
             "name": "João Paulo",
             "email": "jpsilvaprogramador@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
     "require": {}
 }
