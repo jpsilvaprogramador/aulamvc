@@ -1,7 +1,9 @@
 <?php
+namespace App\Core;
 
-require_once __DIR__ . '/../controller/HomeController.php';
-require_once __DIR__ . '/../controller/errors/HttpErrorController.php';
+use App\Controller\HomeController;
+use App\Controller\Errors\HttpErrorController;
+
 
 
 class Router
@@ -9,18 +11,12 @@ class Router
     public function dispatch($url)
     {
 
-        // Definindo os controladores
-        // Adicionando o "Controller" a qualquer parâmetro digitado
         $url = trim($url, '/');  // Tira a barra final
-
-
-
         $partes = $url ? explode('/', $url) : []; // Separa a url em partes
 
-        // ControllerName
+        
         $controllerName = $partes[0] ?? 'Home'; // Condição
         $controllerName = ucfirst($controllerName) . 'Controller';
-        // ActionName
         $actionName = $partes[1] ?? 'index';
 
 
@@ -30,11 +26,11 @@ class Router
             return;
         }
 
-        $controlador = new $controllerName();
+        $controller = new $controllerName();
 
 
 
-        if (!method_exists($controlador, $actionName)) {
+        if (!method_exists($controller, $actionName)) {
             $controller = new HttpErrorController();
             $controller->notFound();
             return;
@@ -43,6 +39,6 @@ class Router
         $params = array_slice($partes, 2);
 
 
-        call_user_func_array([$controlador, $actionName], $params);
+        call_user_func_array([$controller, $actionName], $params);
     }
 }

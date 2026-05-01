@@ -1,8 +1,8 @@
 <?php
+namespace App\Controller;
 
-
-require_once __DIR__ . '/../core/Controller.php';
-require_once __DIR__ . '/../models/Usuario.php';
+use App\Core\Controller;
+use App\Models\Usuario;
 
 class HomeController extends Controller
 {
