@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller\Errors;
 
-use App\Core\Controller;
+use \App\Core\Controller;
 
 class HttpErrorController extends Controller
 {

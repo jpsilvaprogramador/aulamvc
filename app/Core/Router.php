@@ -1,14 +1,13 @@
 <?php
 namespace App\Core;
 
-use App\Controller\HomeController;
-use App\Controller\Errors\HttpErrorController;
+use \App\Controller\Errors\HttpErrorController;
 
 
 
 class Router
 {
-    public function dispatch($url)
+    public static function dispatch(string $url)
     {
 
         $url = trim($url, '/');  // Tira a barra final
@@ -16,7 +15,7 @@ class Router
 
         
         $controllerName = $partes[0] ?? 'Home'; // Condição
-        $controllerName = ucfirst($controllerName) . 'Controller';
+        $controllerName = 'App\Controller\\' . ucfirst($controllerName) . 'Controller';
         $actionName = $partes[1] ?? 'index';
 
 

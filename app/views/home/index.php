@@ -8,9 +8,9 @@
 <body>
     <h1>Home</h1>
     <p>Esta é a Home</p>
-    <p> Nome: <?php echo $nome ?? ''; ?></p>
-    <p> Idade: <?php echo $idade ?? ''; ?></p>
-    <p>Email: <?php echo $email ?? ''; ?></p>
+    <p> Nome: <?= $nome ?? ''; ?></p>
+    <p> Idade: <?= $idade ?? ''; ?></p>
+    <p>Email: <?= $email ?? ''; ?></p>
     <hr>
 </body>
 </html>
